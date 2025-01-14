@@ -1,0 +1,42 @@
+{
+  "name": "pkg-actions",
+  "version": "1.0.0",
+  "author": "Sridhar Mallela",
+  "license": "MIT",
+  "description": "test",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sridharmallela/pkg-actions.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "scripts": {
+    "check-versions": "versions-check --node \">=22\" --npm \">=10\"",
+    "prepare": "is-ci || husky",
+    "print-banner": "print-cli -b -c \"green\" \"pkg-actions\"",
+    "test": "jest --config \"./jest.config.ts\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "~19.6.1",
+    "@types/jest": "~29.5.14",
+    "@types/node": "~22.10.6",
+    "commitlint-config-smallela": "~1.2.0",
+    "cross-env": "~7.0.3",
+    "dotenv": "~16.4.7",
+    "husky": "~9.1.7",
+    "is-ci": "~4.1.0",
+    "jest": "~29.7.0",
+    "jest-environment-node": "~29.7.0",
+    "jest-preset-smallela": "~1.2.1",
+    "lint-staged": "~15.3.0",
+    "prettier": "~3.4.2",
+    "prettier-config-smallela": "~1.2.0",
+    "print-cli": "~2.1.2",
+    "rimraf": "~6.0.1",
+    "ts-jest": "~29.2.5",
+    "ts-node": "~10.9.2",
+    "tslib": "~2.8.1",
+    "typescript": "~5.7.3",
+    "versions-checker": "~2.1.2"
+  }
+}

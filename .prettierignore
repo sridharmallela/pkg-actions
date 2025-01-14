@@ -1,0 +1,14 @@
+# Add files here to ignore them from prettier formatting
+
+.editorconfig
+.gitattributes
+.gitkeep
+.husky
+.npmrc
+.nx/cache
+.nx/workspace-data
+assets
+codeowners
+coverage
+dist
+mocks
