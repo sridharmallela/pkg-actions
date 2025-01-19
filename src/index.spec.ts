@@ -21,7 +21,7 @@ describe('index ---', () => {
       expect(main).toBeDefined();
       await main();
       expect(runDownloadSpy).toHaveBeenCalled();
-      expect(runDownloadSpy).toHaveBeenCalledTimes(5);
+      expect(runDownloadSpy).toHaveBeenCalledTimes(9);
       expect(runDownloadSpy).toHaveBeenNthCalledWith(
         1,
         'commitlint-config-smallela',
@@ -29,17 +29,37 @@ describe('index ---', () => {
       );
       expect(runDownloadSpy).toHaveBeenNthCalledWith(
         2,
-        'jest-preset-smallela',
+        'eslint-config-smallela',
         5000
       );
       expect(runDownloadSpy).toHaveBeenNthCalledWith(
         3,
+        'jest-preset-smallela',
+        5000
+      );
+      expect(runDownloadSpy).toHaveBeenNthCalledWith(
+        4,
+        'npm-commands-smallela',
+        5000
+      );
+      expect(runDownloadSpy).toHaveBeenNthCalledWith(
+        5,
+        'nx-commands-smallela',
+        5000
+      );
+      expect(runDownloadSpy).toHaveBeenNthCalledWith(
+        6,
         'prettier-config-smallela',
         5000
       );
-      expect(runDownloadSpy).toHaveBeenNthCalledWith(4, 'print-cli', 5000);
+      expect(runDownloadSpy).toHaveBeenNthCalledWith(7, 'print-cli', 5000);
       expect(runDownloadSpy).toHaveBeenNthCalledWith(
-        5,
+        8,
+        'stylelint-config-smallela',
+        5000
+      );
+      expect(runDownloadSpy).toHaveBeenNthCalledWith(
+        9,
         'versions-checker',
         5000
       );

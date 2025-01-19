@@ -18,7 +18,8 @@
     "print-banner": "print-cli -b -c \"green\" \"pkg-actions\"",
     "release-build": "npm run check-versions && npm run clean && npm test && npm run build-unit && npm run print-banner && npm start",
     "start": "node \"./dist/index.js\"",
-    "test": "jest --config \"./jest.config.ts\""
+    "test": "jest --config \"./jest.config.ts\"",
+    "validate": "npm run check-versions && npm run clean && npm test && npm run build-unit && npm run print-banner"
   },
   "devDependencies": {
     "@commitlint/cli": "~19.6.1",
@@ -27,6 +28,7 @@
     "commitlint-config-smallela": "~1.2.0",
     "cross-env": "~7.0.3",
     "dotenv": "~16.4.7",
+    "eslint-config-smallela": "~0.0.1",
     "gaxios": "~6.7.1",
     "husky": "~9.1.7",
     "is-ci": "~4.1.0",
@@ -34,10 +36,13 @@
     "jest-environment-node": "~29.7.0",
     "jest-preset-smallela": "~1.2.1",
     "lint-staged": "~15.3.0",
+    "npm-commands-smallela": "~0.0.1",
+    "nx-commands-smallela": "~0.0.1",
     "prettier": "~3.4.2",
     "prettier-config-smallela": "~1.2.0",
     "print-cli": "~2.1.2",
     "rimraf": "~6.0.1",
+    "stylelint-config-smallela": "~0.0.1",
     "ts-jest": "~29.2.5",
     "ts-node": "~10.9.2",
     "tslib": "~2.8.1",
