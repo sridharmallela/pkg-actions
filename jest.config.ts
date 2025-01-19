@@ -1,10 +1,10 @@
 export default {
   preset: 'jest-preset-smallela',
   coveragePathIgnorePatterns: [
-    '.commitlintrc.ts',
     'coverage',
-    'jest.config.ts',
-    'index.mjs'
+    'dist',
+    '.commitlintrc.ts',
+    'jest.config.ts'
   ],
   transform: {
     '^.+\\.[tj]s$': ['ts-jest']

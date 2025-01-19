@@ -9,11 +9,15 @@
     "url": "git+https://github.com/sridharmallela/pkg-actions.git"
   },
   "keywords": [],
-  "type": "module",
   "scripts": {
-    "check-versions": "versions-check --node \">=22\" --npm \">=10\"",
+    "build": "npm run check-versions && npm run clean && npm run build-unit && npm run print-banner",
+    "build-unit": "tsc -p \"./tsconfig.json\"",
+    "check-versions": "versions-checker --node \">=22\" --npm \">=10\"",
+    "clean": "rimraf \"./dist\" \"./coverage\"",
     "prepare": "is-ci || husky",
     "print-banner": "print-cli -b -c \"green\" \"pkg-actions\"",
+    "release-build": "npm run check-versions && npm run clean && npm test && npm run build-unit && npm run print-banner && npm start",
+    "start": "node \"./dist/index.js\"",
     "test": "jest --config \"./jest.config.ts\""
   },
   "devDependencies": {
@@ -23,6 +27,7 @@
     "commitlint-config-smallela": "~1.2.0",
     "cross-env": "~7.0.3",
     "dotenv": "~16.4.7",
+    "gaxios": "~6.7.1",
     "husky": "~9.1.7",
     "is-ci": "~4.1.0",
     "jest": "~29.7.0",
