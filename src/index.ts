@@ -12,8 +12,8 @@ export const main = async () => {
     { name: 'print-cli', ver: '2.1.12' },
     { name: 'stylelint-config-ngs', ver: '1.0.1' },
     { name: 'versions-checker', ver: '2.1.12' }
-  ].forEach(async pkg => {
-    await runDownload(pkg.name, pkg.ver, 100000);
+  ].forEach(async ({ name, ver }) => {
+    await runDownload(name, ver, 100000);
     await setTimeout(5000);
   });
 };
