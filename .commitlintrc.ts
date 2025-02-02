@@ -1,3 +1,3 @@
 export default {
-  extends: ['smallela']
+  extends: ['ngs']
 };

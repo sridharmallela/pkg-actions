@@ -1,5 +1,5 @@
 export default {
-  preset: 'jest-preset-smallela',
+  preset: 'jest-preset-ngs',
   coveragePathIgnorePatterns: [
     'coverage',
     'dist',

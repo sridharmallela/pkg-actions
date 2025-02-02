@@ -71,7 +71,7 @@ describe('downloader ---', () => {
   describe('should test downloadPkg ---', () => {
     test('when valid', async () => {
       requestSpy.mockResolvedValue('TEST_RESP');
-      expect(await downloadPkg('TEST', '1.2.3')).toEqual('TEST_RESP');
+      expect(await downloadPkg('TEST', '1.2.3', {})).toEqual('TEST_RESP');
       expect(requestSpy).toHaveBeenCalled();
       expect(requestSpy).toHaveBeenCalledTimes(1);
       expect(requestSpy).toHaveBeenCalledWith({
@@ -87,7 +87,7 @@ describe('downloader ---', () => {
       requestSpy.mockImplementation(() => {
         throw new Error();
       });
-      expect(await downloadPkg('TEST', '1.2.3')).toEqual(true);
+      expect(await downloadPkg('TEST', '1.2.3', {})).toEqual(true);
       expect(requestSpy).toHaveBeenCalled();
       expect(requestSpy).toHaveBeenCalledTimes(1);
       expect(requestSpy).toHaveBeenCalledWith({
@@ -103,7 +103,7 @@ describe('downloader ---', () => {
   describe('should test action ---', () => {
     test('when valid', async () => {
       requestSpy.mockResolvedValue('TEST_RESP');
-      await action('TEST', '1.2.3', 251);
+      await action('TEST', '1.2.3', 251, {});
       expect(requestSpy).toHaveBeenCalled();
       expect(requestSpy).toHaveBeenCalledTimes(251);
       expect(requestSpy).toHaveBeenCalledWith({
@@ -121,7 +121,7 @@ describe('downloader ---', () => {
       requestSpy.mockResolvedValue({
         data: { objects: [{ package: { version: '1.2.3' } }] }
       });
-      await runDownload('TEST', 1);
+      await runDownload('TEST', '1.2.3', 1);
       expect(requestSpy).toHaveBeenCalled();
       expect(requestSpy).toHaveBeenCalledTimes(2);
       expect(requestSpy).toHaveBeenNthCalledWith(1, {
@@ -140,7 +140,7 @@ describe('downloader ---', () => {
 
     test('when invalid version', async () => {
       requestSpy.mockResolvedValue({});
-      await runDownload('TEST', 1);
+      await runDownload('TEST', '1.2.3', 1);
       expect(requestSpy).toHaveBeenCalled();
       expect(requestSpy).toHaveBeenCalledTimes(1);
       expect(requestSpy).toHaveBeenCalledWith({
